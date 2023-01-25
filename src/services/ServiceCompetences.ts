@@ -10,6 +10,12 @@ export class ServiceCompetences {
            const data = await response.json();
            return data;
    }
+   getCompetencesById =async (id:any)=>{
+    //let ids = id.id
+    const response = await fetch(`http://localhost:3000/competences/${id}`);
+    const data = await response.json();
+    return data;
+}
    /**
     * ADDCOMPETENCE permet d'ajouter une nouevlle competence
     * @param competence de type CompetenceType

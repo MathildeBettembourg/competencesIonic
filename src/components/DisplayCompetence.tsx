@@ -17,7 +17,7 @@ export const DisplayCompetence = (props: props) => {
             </IonCardHeader>
             <IonCardContent>
                 {props.competenceUnit.description}
-             <Link to={`/CompetenceDetail/${props.competenceUnit.id}`}>Voir plus...</Link> </IonCardContent>
+             <Link to={`/CompetenceDetail/${props.competenceUnit.id as string}`}>Voir plus...</Link> </IonCardContent>
       
         </>
 

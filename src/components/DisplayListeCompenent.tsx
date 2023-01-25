@@ -16,7 +16,7 @@ export const DisplayListeComponent = () => {
             {listeCompetences &&
                 listeCompetences.map((competenceUnit, index) => {
                     return (
-                        <IonCard>
+                        <IonCard key={index}>
                             <DisplayCompetence key={index} competenceUnit={competenceUnit} />
                         </IonCard>)
 

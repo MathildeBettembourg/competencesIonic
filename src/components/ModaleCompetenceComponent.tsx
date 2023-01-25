@@ -29,6 +29,7 @@ useEffect(()=>{
 }, [])
 
   const [nouvelleCompetence, setNouvelleCompetence] = useState<CompetencesType>(new CompetencesType("", "", ""))
+  
 
   /**
    * Confirm permet de dissmiss la modale et permet de faire un 
