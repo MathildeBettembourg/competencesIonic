@@ -1,0 +1,21 @@
+{
+  "competences": [
+    {
+      "id": "765101c4-07b8-51e7-e85c-8f71ea94414c",
+      "nom": "json-server",
+      "description": "typicode"
+    },
+    {
+      "nom": "vv",
+      "description": "vv",
+      "id": "480ceaff-1426-447a-83d5-c22de46fce98"
+    }
+  ],
+  "personnes": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
