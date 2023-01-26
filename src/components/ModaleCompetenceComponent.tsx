@@ -28,7 +28,7 @@ useEffect(()=>{
   serviceCompetences.getCompetences()
 }, [])
 
-  const [nouvelleCompetence, setNouvelleCompetence] = useState<CompetencesType>(new CompetencesType("", "", ""))
+  const [nouvelleCompetence, setNouvelleCompetence] = useState<CompetencesType>(new CompetencesType("", "", "", []))
   
 
   /**
@@ -48,7 +48,7 @@ useEffect(()=>{
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Ajouter une Compétence</IonTitle>
+            <IonTitle>Compétence</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">

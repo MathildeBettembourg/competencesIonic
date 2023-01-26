@@ -5,3 +5,15 @@ ion-card-header.ios {
   .body{
     z-index: 100;
   }
+  .inline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .inCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }

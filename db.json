@@ -3,39 +3,93 @@
     {
       "id": "765101c4-07b8-51e7-e85c-8f71ea94414c",
       "nom": "json-server",
-      "description": "typicode"
+      "description": "typicode",
+      "personnesIds": []
     },
     {
       "nom": "vv",
       "description": "vv",
-      "id": "480ceaff-1426-447a-83d5-c22de46fce98"
+      "id": "480ceaff-1426-447a-83d5-c22de46fce98",
+      "personnesIds": []
     },
     {
       "nom": "Java",
       "description": "Java",
-      "id": "7aaa3534-7f08-d5a3-7d09-a2a448f5fc0d"
+      "id": "7aaa3534-7f08-d5a3-7d09-a2a448f5fc0d",
+      "personnesIds": []
     },
     {
       "nom": "test",
       "description": "test",
-      "id": "8ab2771d-4cbc-dc39-17c8-dbc1c78de322"
+      "id": "8ab2771d-4cbc-dc39-17c8-dbc1c78de322",
+      "personnesIds": []
     },
     {
       "nom": "ytest",
       "description": "tttt",
-      "id": "958c01c3-036f-f558-d0d3-e51c89f55287"
+      "id": "958c01c3-036f-f558-d0d3-e51c89f55287",
+      "personnesIds": []
     },
     {
       "nom": "dddd",
       "description": "dddddd",
-      "id": "e133e4a8-ebd7-5f52-9d2f-f3c3d9272f4b"
+      "id": "e133e4a8-ebd7-5f52-9d2f-f3c3d9272f4b",
+      "personnesIds": [
+        "99ce274e-a01f-55v7-9401-dc477c505741"
+      ]
+    },
+    {
+      "nom": "JAVA",
+      "description": "JAVA",
+      "id": "99ce274e-a01f-98a2-9401-dc899c505741",
+      "personnesIds": [
+        "99ce274e-a01f-55v7-9401-dc477c505741"
+      ]
     }
   ],
   "personnes": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "99ce274e-a01f-55v7-9401-dc477c505741",
+      "nom": "Do",
+      "prenom": "Janes",
+      "titre": "Dev Junior",
+      "description": " Here's a small Jane's description for the card content. Nothing more, nothing less. She is just a dev junior.",
+      "competence": [
+        {
+          "id": "a01f-55v7",
+          "niveau": "débutant",
+          "idCompetence": "99ce274e-a01f-98a2-9401-dc899c505741"
+        },
+        {
+          "id": "477c505741",
+          "niveau": "débutant",
+          "idCompetence": "e133e4a8-ebd7-5f52-9d2f-f3c3d9272f4b"
+        }
+      ]
+    },
+    {
+      "nom": "Havez",
+      "prenom": "Maxime",
+      "description": "Dev",
+      "titre": "Dev",
+      "competence": [],
+      "id": "a5173d56-50bc-8cbf-4c99-4c760bf41ff8"
+    },
+    {
+      "nom": "touloulou",
+      "prenom": "",
+      "description": "",
+      "titre": "",
+      "competence": [],
+      "id": "1052f1e3-257a-cd01-26ed-a3d5708a55bc"
+    },
+    {
+      "nom": "rdfgddf",
+      "prenom": "ggfdgdggg",
+      "description": "ggggg",
+      "titre": "ggggggg",
+      "competence": [],
+      "id": "7a941578-5163-4e3e-de9d-a32aeb77cbaa"
     }
   ]
 }

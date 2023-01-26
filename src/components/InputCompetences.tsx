@@ -10,7 +10,7 @@ export type props={
     confirm:Function
 }
 export const InputCompetences = (props:props) => {
-const [nouvelleCompetence, setNouvelleCompetence] = useState<CompetencesType>(new CompetencesType("", "", ""))
+const [nouvelleCompetence, setNouvelleCompetence] = useState<CompetencesType>(new CompetencesType("", "", "", []))
 
 /**
  * HANDLEDESCRIPTIONCHANGE permet d'implementer la description d'une competence
