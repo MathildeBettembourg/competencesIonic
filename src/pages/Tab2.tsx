@@ -12,6 +12,9 @@ import './Tab2.css';
 const Tab2= () => {
   let { id } = useParams() as { id: string };
   const[personne, setPersonne]=useState<PersonnesType>(new PersonnesType("", "", "", "", "", []))
+  /**
+   * UseEffect here to fetch a personne by its id
+   */
   useEffect(()=>{
     servicePersonne.getPersonneById(id as string).then((res) => setPersonne(res))
   }, [id])

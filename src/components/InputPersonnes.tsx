@@ -4,11 +4,13 @@ import SelectComponent from './SelectComponent';
 import { servicePersonne } from '../services/ServicePersonne';
 import uuid from 'react-uuid';
 import { PersonnesType } from '../Typages/PersonnesType';
+import { CompetencesType } from '../Typages/CompetencesType';
 
 export type Props={
     nouvellePersonne:PersonnesType
     setNouvellePersonne:Function
     handleClick:Function
+    listeTech:CompetencesType[]
 }
 const InputPersonnes = (props:Props) => {
 
@@ -71,7 +73,7 @@ const InputPersonnes = (props:Props) => {
             </IonItem>
             <IonItem>
                 <IonLabel>Competences</IonLabel>
-                <SelectComponent/>
+                <SelectComponent ajoutComp={props.setNouvellePersonne} nouvellePersonne={props.nouvellePersonne} listeCompetence={props.listeTech}/>
             </IonItem>
             <IonButton onClick={handleClick}>Ajouter</IonButton>
         </IonList>

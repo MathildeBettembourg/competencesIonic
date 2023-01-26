@@ -4,18 +4,26 @@ import { serviceCompetences } from '../services/ServiceCompetences';
 import { servicePersonne } from '../services/ServicePersonne';
 import { PersonnesType } from '../Typages/PersonnesType';
 import SmalListpersonnes from '../components/SmalListpersonnes';
-import InputPersonnes from '../components/InputPersonnes';
+//import InputPersonnes from '../components/InputPersonnes';
+import { CompetencesType } from '../Typages/CompetencesType';
 
 export const TabProfils = () => {
     const [listeUtilisateurs, setListeUtilisateurs] = useState<PersonnesType[]>([])
     const[nouvellePersonne, setNouvellePersonne] = useState<PersonnesType>(new PersonnesType("","","","","",[]))
+    const[listeTech, setListTech] = useState<CompetencesType[]>([])
+    /**
+     * useEffect here to get al the people in the Database
+     */
     useEffect(() => {
         servicePersonne.getPersonne().then((res) =>
         setListeUtilisateurs(res)
         //console.log(res)
         )
-    }, [listeUtilisateurs])
+    }, [])
 
+    useEffect(()=>{
+serviceCompetences.getCompetences().then((res)=> setListTech(res))
+    }, [])
 
     const handleClick=()=>{
         servicePersonne.addPersonne(nouvellePersonne)
@@ -42,7 +50,7 @@ export const TabProfils = () => {
                   <IonContent className="ion-padding">
                     <div className="ion-margin-top">
                       <IonTitle>Nouvelle personne</IonTitle>
-                      <InputPersonnes nouvellePersonne={nouvellePersonne} setNouvellePersonne={setNouvellePersonne} handleClick={handleClick}/>
+                      {/* <InputPersonnes nouvellePersonne={nouvellePersonne} setNouvellePersonne={setNouvellePersonne} handleClick={handleClick} listeTech={listeTech}/> */}
                     </div>
                   </IonContent>
                 </IonModal>

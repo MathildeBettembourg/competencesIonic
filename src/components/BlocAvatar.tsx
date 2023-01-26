@@ -24,6 +24,7 @@ const BlocAvatar = (props: Props) => {
                     <IonLabel>
                         <p>{personnePossedantCompetence.prenom} {personnePossedantCompetence.prenom}</p>
                         <p>{personnePossedantCompetence.titre}</p>
+
                     </IonLabel>
                 </IonItem>
             }

@@ -1,65 +1,43 @@
 import React, { useState } from 'react';
 import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
+import { CompetencesType } from '../Typages/CompetencesType';
+import { PersonnesType } from '../Typages/PersonnesType';
+import { CompNiveauType } from '../Typages/CompNiveauType';
+import uuid from 'react-uuid';
 
-interface Food {
-  id: number;
-  name: string;
-  type: string;
+export type Props = {
+    listeCompetence: CompetencesType[]
+    ajoutComp: Function
+    nouvellePersonne: PersonnesType
 }
+export const SelectComponent = (props: Props) => {
+    const uid = uuid()
+    const handleChange = (ev: any) => {
 
-const foods: Food[] = [
-  {
-    id: 1,
-    name: 'Apples',
-    type: 'fruit',
-  },
-  {
-    id: 2,
-    name: 'Carrots',
-    type: 'vegetable',
-  },
-  {
-    id: 3,
-    name: 'Cupcakes',
-    type: 'dessert',
-  },
-];
+        // props.ajoutComp({ 
+        //     ...props.nouvellePersonne, 
+        //     competence:[
+        //         ...props.nouvellePersonne.competence,
+        //         ...ev.map((id:string)=>{
+        //             const newC = new CompNiveauType("", id,uid)
+        //             return  newC
+        //         })
+        //     ] 
+        // })
+    }
+    return (
+        <IonList>
+            <IonItem>
+                <IonSelect onIonChange={handleChange} placeholder="Select all fruits that apply" multiple={true}>
+                    <IonSelectOption value="oranges">Aucunes</IonSelectOption>
+                    {props.listeCompetence && props.listeCompetence.length != 0 &&
+                        props.listeCompetence.map((competence: CompetencesType, index) => {
+                            return <IonSelectOption value={competence.id} key={index}>{competence.nom}</IonSelectOption>
+                        })}
 
-const compareWith = (o1: Food, o2: Food) => {
-  if (!o1 || !o2) {
-    return o1 === o2;
-  }
-
-  if (Array.isArray(o2)) {
-    return o2.some((o) => o.id === o1.id);
-  }
-
-  return o1.id === o2.id;
-};
-
-export const SelectComponent=()=> {
-  const [currentFood, setCurrentFood] = useState('');
-
-  return (
-    <IonList>
-      <IonItem>
-        <IonSelect
-          placeholder="Select food"
-          compareWith={compareWith}
-          onIonChange={(ev) => setCurrentFood(JSON.stringify(ev.detail.value))}
-          multiple={true}
-        >
-          {foods.map((food) => (
-            <IonSelectOption key={food.id} value={food}>
-              {food.name}
-            </IonSelectOption>
-          ))}
-        </IonSelect>
-      </IonItem>
-      <IonItem lines="none">
-        <IonLabel>Current food: {currentFood}</IonLabel>
-      </IonItem>
-    </IonList>
-  );
+                </IonSelect>
+            </IonItem>
+        </IonList >
+    );
 }
 export default SelectComponent;
