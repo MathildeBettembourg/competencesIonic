@@ -1,8 +1,8 @@
 import React, { HtmlHTMLAttributes, useState } from "react";
 import { IonButton, IonInput, IonItem, IonLabel, IonList } from '@ionic/react';
-import { CompetencesType } from "../Typages/CompetencesType";
+import { CompetencesType } from "../../Typages/CompetencesType";
 import uuid from 'react-uuid';
-import { serviceCompetences } from "../services/ServiceCompetences";
+import { serviceCompetences } from "../../services/ServiceCompetences";
 
 export type props={
     nouvelleCompetence:CompetencesType,
@@ -42,12 +42,12 @@ const handleClickAjout =()=>{
     return (
         <IonList>
             <IonItem>
-                <IonLabel>Nom : </IonLabel>
+                <IonLabel position="floating">Nom : </IonLabel>
                 <IonInput placeholder="Nom de la compétence" onIonChange={handleNomChange} required={true}></IonInput>
             </IonItem>
 
             <IonItem>
-                <IonLabel>Description :</IonLabel>
+                <IonLabel position="floating" >Description :</IonLabel>
                 <IonInput type="text" placeholder="Description de la compétence" onIonChange={handleDescriptionChange} required={true}></IonInput>
             </IonItem>
             <IonButton onClick={handleClickAjout}>Créer</IonButton>

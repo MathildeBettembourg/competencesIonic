@@ -2,13 +2,13 @@ import { IonButton, IonItem, IonLabel, IonThumbnail } from '@ionic/react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Route } from 'workbox-routing'
-import CompetenceDetail from '../pages/CompetenceDetail'
-import { serviceCompetences } from '../services/ServiceCompetences'
-import { CompetencesType } from '../Typages/CompetencesType'
-import { CompNiveauType } from '../Typages/CompNiveauType'
-import ButtonComponent from './ButtonComponent'
-import CrubFabButton from './CrubFabButton'
-import "./dComp.css";
+import CompetenceDetail from '../../pages/CompetenceDetail'
+import { serviceCompetences } from '../../services/ServiceCompetences'
+import { CompetencesType } from '../../Typages/CompetencesType'
+import { CompNiveauType } from '../../Typages/CompNiveauType'
+import ButtonComponent from '../ButtonComponent'
+import CrubFabButton from '../CrubFabButton'
+import "../dComp.css";
 
 
 
@@ -22,13 +22,10 @@ const DisplayCompetencePetitComponent = (props: Props) => {
      * HANDLECLICK est une fonction qui va permettre de prendre en charge le click
      * elle va entrainer une redirection vers la page de modification du composant.
      */
-    const handleClick = () => {
-
-
-
-        return (<Link to={`/NiveauEdition/${competenceLiee.id as string}`} />)
-
-    }
+    // const handleClick = () => {
+    //
+    //     return (<Link to={`/NiveauEdition/${competenceLiee.id as string}`} />)
+    // }
     /**
      * UseEffect pour aller chercher les informations liées à uene compétence
      *  en particulier qui est renseignées sous forme d'id afin d'eviter des boucle
@@ -50,7 +47,9 @@ const DisplayCompetencePetitComponent = (props: Props) => {
                                 <p>{props.competence.niveau}</p>
                             </div>
                             <div className='middle'>
-                                <Link to={`/NiveauEdition/${competenceLiee.id as string}`}> <ButtonComponent nom='Editer'></ButtonComponent></Link>
+                                {/*<Link to={`/NiveauEdition/${competenceLiee.id as string}`}> <ButtonComponent nom='Editer'></ButtonComponent></Link>*/}
+
+                                <IonButton routerLink={`/NiveauEdition/${competenceLiee.id as string}`} color="warning"> Editer</IonButton>
                             </div>
                         </div>
                     </IonLabel>

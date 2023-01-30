@@ -1,7 +1,7 @@
 import { IonAvatar, IonItem, IonLabel } from '@ionic/react'
 import React, { useEffect, useState } from 'react'
-import { servicePersonne } from '../services/ServicePersonne'
-import { PersonnesType } from '../Typages/PersonnesType'
+import { servicePersonne } from '../../services/ServicePersonne'
+import { PersonnesType } from '../../Typages/PersonnesType'
 
 export type Props = {
     id: string

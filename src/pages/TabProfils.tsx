@@ -3,9 +3,10 @@ import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, Ion
 import { serviceCompetences } from '../services/ServiceCompetences';
 import { servicePersonne } from '../services/ServicePersonne';
 import { PersonnesType } from '../Typages/PersonnesType';
-import SmalListpersonnes from '../components/SmalListpersonnes';
+import SmalListpersonnes from '../components/Profils/SmalListpersonnes';
 //import InputPersonnes from '../components/InputPersonnes';
 import { CompetencesType } from '../Typages/CompetencesType';
+import InputPersonnes from "../components/Profils/InputPersonnes";
 
 export const TabProfils = () => {
     const [listeUtilisateurs, setListeUtilisateurs] = useState<PersonnesType[]>([])
@@ -50,7 +51,7 @@ serviceCompetences.getCompetences().then((res)=> setListTech(res))
                   <IonContent className="ion-padding">
                     <div className="ion-margin-top">
                       <IonTitle>Nouvelle personne</IonTitle>
-                      {/* <InputPersonnes nouvellePersonne={nouvellePersonne} setNouvellePersonne={setNouvellePersonne} handleClick={handleClick} listeTech={listeTech}/> */}
+                   <InputPersonnes nouvellePersonne={nouvellePersonne} setNouvellePersonne={setNouvellePersonne} handleClick={handleClick} listeTech={listeTech}/>
                     </div>
                   </IonContent>
                 </IonModal>

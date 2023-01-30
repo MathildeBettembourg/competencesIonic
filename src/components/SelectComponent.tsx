@@ -1,30 +1,49 @@
-import React, { useState } from 'react';
-import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
+import React, {useEffect, useState} from 'react';
+import {IonItem, IonList, IonLabel, IonSelect, IonSelectOption, IonButton} from '@ionic/react';
 import { CompetencesType } from '../Typages/CompetencesType';
 import { PersonnesType } from '../Typages/PersonnesType';
 import { CompNiveauType } from '../Typages/CompNiveauType';
 import uuid from 'react-uuid';
+import {log} from "util";
 
 export type Props = {
     listeCompetence: CompetencesType[]
     ajoutComp: Function
     nouvellePersonne: PersonnesType
+    newComp:CompNiveauType[]
+    setNewComp:Function
+    handleChangeCompetence:Function
 }
 export const SelectComponent = (props: Props) => {
     const uid = uuid()
-    const handleChange = (ev: any) => {
+    const [listCompetence, setListCompetence]=useState<string[]>([])
+    // const newComp:CompNiveauType[]=[]
+    const listNouvelleCompObject=()=>{
+        console.log("test")
+        listCompetence.forEach(idComp => props.setNewComp(props.newComp.push(new CompNiveauType("", idComp, uid))))
+        console.log(props.newComp)
+        return props.newComp
+        // listCompetence.map((i, index)=> {
+        //     console.log(i)
+        //     return props.setNewComp([...props.newComp,new CompNiveauType("", i, uid) ])
+        }
 
-        // props.ajoutComp({ 
-        //     ...props.nouvellePersonne, 
-        //     competence:[
-        //         ...props.nouvellePersonne.competence,
-        //         ...ev.map((id:string)=>{
-        //             const newC = new CompNiveauType("", id,uid)
-        //             return  newC
-        //         })
-        //     ] 
-        // })
+        // ))
+        //
+        //
+        // }
+
+    useEffect(()=>{
+        listNouvelleCompObject()
+    }, [listCompetence])
+    const handleChange = (ev: any) => {
+        setListCompetence(ev.target.value);
     }
+
+const handleClick=()=>{
+        props.handleChangeCompetence(props.newComp)
+}
+
     return (
         <IonList>
             <IonItem>
@@ -34,10 +53,10 @@ export const SelectComponent = (props: Props) => {
                         props.listeCompetence.map((competence: CompetencesType, index) => {
                             return <IonSelectOption value={competence.id} key={index}>{competence.nom}</IonSelectOption>
                         })}
-
                 </IonSelect>
+                <IonButton onClick={handleClick}> ok</IonButton>
             </IonItem>
         </IonList >
-    );
+    )
 }
 export default SelectComponent;

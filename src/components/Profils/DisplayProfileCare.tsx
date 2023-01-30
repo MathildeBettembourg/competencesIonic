@@ -1,6 +1,6 @@
 import React from 'react'
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
-import { PersonnesType } from '../Typages/PersonnesType';
+import {IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle} from '@ionic/react';
+import { PersonnesType } from '../../Typages/PersonnesType';
 
 
 export type Props={
@@ -18,6 +18,10 @@ const DisplayProfileCare = (props:Props) => {
           <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
           <IonCardContent>
            {props.personne.description}
+            <div className=" inCol">
+            <IonButton color="success">Modification</IonButton>
+            <IonButton color="primary">Nouvelle competences</IonButton>
+            </div>
           </IonCardContent>
         </IonCard>
     }

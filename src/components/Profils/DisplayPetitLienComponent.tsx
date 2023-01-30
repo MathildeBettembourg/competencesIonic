@@ -1,10 +1,10 @@
 import { IonButton, IonItem, IonLabel, IonThumbnail } from '@ionic/react'
 import React, { useEffect, useState } from 'react'
-import CompetenceDetail from '../pages/CompetenceDetail'
-import { serviceCompetences } from '../services/ServiceCompetences'
-import { CompetencesType } from '../Typages/CompetencesType'
-import { CompNiveauType } from '../Typages/CompNiveauType'
-import "./dComp.css";
+import CompetenceDetail from '../../pages/CompetenceDetail'
+import { serviceCompetences } from '../../services/ServiceCompetences'
+import { CompetencesType } from '../../Typages/CompetencesType'
+import { CompNiveauType } from '../../Typages/CompNiveauType'
+import "../dComp.css";
 
 
 export type Props = {

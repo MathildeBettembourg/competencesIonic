@@ -1,7 +1,7 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DisplayPersonnePetitLienCompetence from "../components/DisplayPersonnePetitLienCompetence";
+import DisplayPersonnePetitLienCompetence from "../components/Competences/DisplayPersonnePetitLienCompetence";
 import ExploreContainer from "../components/ExploreContainer";
 import { serviceCompetences } from "../services/ServiceCompetences";
 import { CompetencesType } from "../Typages/CompetencesType";

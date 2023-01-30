@@ -1,5 +1,5 @@
 import React from 'react'
-import DisplayCompetencePetitComponent from '../components/DisplayCompetencePetitComponent'
+import DisplayCompetencePetitComponent from '../components/Profils/DisplayCompetencePetitComponent'
 import { CompetencesType } from '../Typages/CompetencesType'
 import { CompNiveauType } from '../Typages/CompNiveauType'
 import { PersonnesType } from '../Typages/PersonnesType'

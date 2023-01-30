@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import { personRemove } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import DisplayProfileCare from '../components/DisplayProfileCare';
+import DisplayProfileCare from '../components/Profils/DisplayProfileCare';
 import ExploreContainer from '../components/ExploreContainer';
 import { servicePersonne } from '../services/ServicePersonne';
 import { PersonnesType } from '../Typages/PersonnesType';
@@ -31,7 +31,7 @@ const Tab2= () => {
             <IonTitle size="large">Profile</IonTitle>
           </IonToolbar>
         </IonHeader> */}
-        <ExploreContainer name="Tab 2 page" />
+        {/*<ExploreContainer name="Tab 2 page" />*/}
         <DisplayProfileCare personne={personne}/>
         <DisplayListeCompetence personne={personne} />
       </IonContent>

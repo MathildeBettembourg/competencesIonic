@@ -13,11 +13,11 @@ import {
   IonInput,
 } from '@ionic/react';
 import { OverlayEventDetail } from '@ionic/core/components';
-import InputCompetences from './InputCompetences';
+import InputCompetences from '../components/Competences/InputCompetences';
 import { serviceCompetences } from '../services/ServiceCompetences';
 import { CompetencesType } from '../Typages/CompetencesType';
 import uuid from 'react-uuid';
-import DisplayListeComponent from './DisplayListeCompenent';
+import DisplayListeComponent from '../components/Competences/DisplayListeCompenent';
 
 
 export const ModaleCompetenceComponent = () => {

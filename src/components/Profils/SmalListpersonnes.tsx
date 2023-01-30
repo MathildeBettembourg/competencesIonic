@@ -1,7 +1,7 @@
 import { IonButton, IonItem, IonLabel, IonThumbnail } from '@ionic/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PersonnesType } from '../Typages/PersonnesType'
+import { PersonnesType } from '../../Typages/PersonnesType'
 
 export type Props = {
   utilisateur: PersonnesType

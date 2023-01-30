@@ -1,8 +1,8 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
-import DisplayListeComponent from '../components/DisplayListeCompenent';
+import DisplayListeComponent from '../components/Competences/DisplayListeCompenent';
 import ExploreContainer from '../components/ExploreContainer';
-import ModaleCompetenceComponent from '../components/ModaleCompetenceComponent';
+import ModaleCompetenceComponent from '../layout/ModaleCompetenceComponent';
 
 import './Tab1.css';
 
@@ -32,7 +32,7 @@ const Tab1: React.FC = () => {
           </IonToolbar>
         </IonHeader>
          <ModaleCompetenceComponent/>
-        <ExploreContainer name="Tab 1 page" />
+        {/*<ExploreContainer name="Tab 1 page" />*/}
       </IonContent>
     </IonPage>
   );

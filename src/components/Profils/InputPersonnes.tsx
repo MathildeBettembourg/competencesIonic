@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { IonButton, IonInput, IonItem, IonLabel, IonList } from '@ionic/react';
-import SelectComponent from './SelectComponent';
-import { servicePersonne } from '../services/ServicePersonne';
+import SelectComponent from '../SelectComponent';
+import { servicePersonne } from '../../services/ServicePersonne';
 import uuid from 'react-uuid';
-import { PersonnesType } from '../Typages/PersonnesType';
-import { CompetencesType } from '../Typages/CompetencesType';
+import { PersonnesType } from '../../Typages/PersonnesType';
+import { CompetencesType } from '../../Typages/CompetencesType';
+import {CompNiveauType} from "../../Typages/CompNiveauType";
 
 export type Props={
     nouvellePersonne:PersonnesType
@@ -43,6 +44,17 @@ const InputPersonnes = (props:Props) => {
     const handleDescriptionChange=(e:any)=>{
         props.setNouvellePersonne({...props.nouvellePersonne, description:e.target.value})
     }
+
+    const [newComp, setNewComp]=useState<CompNiveauType[]>([])
+    const handleChangeCompetence=(newComp:CompNiveauType[])=>{
+        console.log(newComp[0].id)
+        // props.setNouvellePersonne(
+        //     {...props.nouvellePersonne,
+        //         competence:
+        //             [...props.nouvellePersonne.competence,newComp
+        //             ]
+        //     })
+    }
     /**
      * Handle click est la fonction pour ajouter une nouvelle personne
      */
@@ -73,7 +85,12 @@ const InputPersonnes = (props:Props) => {
             </IonItem>
             <IonItem>
                 <IonLabel>Competences</IonLabel>
-                <SelectComponent ajoutComp={props.setNouvellePersonne} nouvellePersonne={props.nouvellePersonne} listeCompetence={props.listeTech}/>
+                <SelectComponent ajoutComp={props.setNouvellePersonne}
+                                 nouvellePersonne={props.nouvellePersonne}
+                                 listeCompetence={props.listeTech}
+                                 newComp={newComp}
+                                 setNewComp={setNewComp}
+                                 handleChangeCompetence={handleChangeCompetence}/>
             </IonItem>
             <IonButton onClick={handleClick}>Ajouter</IonButton>
         </IonList>
