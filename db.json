@@ -1,96 +1,61 @@
 {
   "competences": [
     {
-      "nom": "Java",
-      "description": "Java",
-      "id": "7aaa3534-7f08-d5a3-7d09-a2a448f5fc0d",
-      "personnesIds": []
+      "nom": "JAVA",
+      "description": "JAVAAAAA",
+      "id": "00e3028c-0d1f-885e-c25f-fbaf0e23a30e",
+      "personnesIds": [
+        "b4345ecb-f1f4-fb70-cac6-bf3371c07be4",
+        "50df16f0-4fbe-5c27-ccce-dca0607e0eb5",
+        "98cc5d37-205f-2299-ac4b-e41df04c96c4",
+        "98cc5d37-205f-2299-ac4b-e41df04c96c4",
+        "49b17d97-2022-de3f-749d-66c9eca2653a",
+        "a7d528b3-3369-84d0-b90a-a5f64709bf61"
+      ]
     },
     {
-      "nom": "JAVA",
-      "description": "JAVA",
-      "id": "99ce274e-a01f-98a2-9401-dc899c505741",
+      "nom": "JavaScript",
+      "description": "Pas comme du java, pratique mais pas chouette question typage",
+      "id": "dec45d71-a7fa-cc10-e900-bc9404bde7f1",
       "personnesIds": [
-        "99ce274e-a01f-55v7-9401-dc477c505741"
+        "98cc5d37-205f-2299-ac4b-e41df04c96c4",
+        "98cc5d37-205f-2299-ac4b-e41df04c96c4",
+        "49b17d97-2022-de3f-749d-66c9eca2653a",
+        "a7d528b3-3369-84d0-b90a-a5f64709bf61"
       ]
     }
   ],
   "personnes": [
     {
-      "id": "99ce274e-a01f-55v7-9401-dc477c505741",
-      "nom": "Do",
-      "prenom": "Janes",
-      "titre": "Dev Junior",
-      "description": " Here's a small Jane's description for the card content. Nothing more, nothing less. She is just a dev junior.",
+      "nom": "Timio",
+      "prenom": "Thomas",
+      "description": "Elosis",
+      "titre": "DevSenior",
       "competence": [
         {
-          "id": "a01f-55v7",
-          "niveau": "débutant",
-          "idCompetence": "99ce274e-a01f-98a2-9401-dc899c505741"
+          "niveau": "",
+          "idCompetence": "00e3028c-0d1f-885e-c25f-fbaf0e23a30e",
+          "id": "f9af2106-fa23-95c0-61b1-539f05c65c84"
         },
         {
-          "id": "477c505741",
-          "niveau": "débutant",
-          "idCompetence": "e133e4a8-ebd7-5f52-9d2f-f3c3d9272f4b"
+          "niveau": "",
+          "idCompetence": "dec45d71-a7fa-cc10-e900-bc9404bde7f1",
+          "id": "8195f154-b785-790a-c96b-e332e9b63f44"
         }
-      ]
-    },
-    {
-      "nom": "Havez",
-      "prenom": "Maxime",
-      "description": "Dev",
-      "titre": "Dev",
-      "competence": [],
-      "id": "a5173d56-50bc-8cbf-4c99-4c760bf41ff8"
-    },
-    {
-      "nom": "touloulou",
-      "prenom": "",
-      "description": "",
-      "titre": "",
-      "competence": [],
-      "id": "1052f1e3-257a-cd01-26ed-a3d5708a55bc"
-    },
-    {
-      "nom": "rdfgddf",
-      "prenom": "ggfdgdggg",
-      "description": "ggggg",
-      "titre": "ggggggg",
-      "competence": [],
-      "id": "7a941578-5163-4e3e-de9d-a32aeb77cbaa"
-    },
-    {
-      "nom": "Test",
-      "prenom": "test",
-      "description": "test",
-      "titre": "test",
-      "competence": [],
-      "id": "332fa048-507f-9aa4-94ba-0f697bbd404c"
-    },
-    [
-      "765101c4-07b8-51e7-e85c-8f71ea94414c",
-      "480ceaff-1426-447a-83d5-c22de46fce98"
-    ],
-    {
-      "nom": "rrr",
-      "prenom": "hhh",
-      "description": "hhh",
-      "titre": "hhh",
-      "competence": [
-        "765101c4-07b8-51e7-e85c-8f71ea94414c",
-        "480ceaff-1426-447a-83d5-c22de46fce98"
       ],
-      "id": "bc836ed9-797c-e315-8a74-f5b5d71849ac"
+      "id": "a7d528b3-3369-84d0-b90a-a5f64709bf61"
+    }
+  ],
+  "niveaux": [
+    {
+      "niveau": "Senior",
+      "idCompetence": "00e3028c-0d1f-885e-c25f-fbaf0e23a30e",
+      "id": "f9af2106-fa23-95c0-61b1-539f05c65c84"
     },
     {
-      "nom": "",
-      "prenom": "",
-      "description": "",
-      "titre": "",
-      "competence": [
-        1
-      ],
-      "id": "0BR2o-2"
+      "niveau": "",
+      "idCompetence": "dec45d71-a7fa-cc10-e900-bc9404bde7f1",
+      "id": "8195f154-b785-790a-c96b-e332e9b63f44"
     }
   ]
 }

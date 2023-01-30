@@ -6,13 +6,14 @@ import { PersonnesType } from '../Typages/PersonnesType'
 
 export type Props = {
     personne:PersonnesType
+    setPersonne:Function
 }
 const DisplayListeCompetence = (props: Props) => {
     return (
         <>
             {props.personne.competence &&
                 props.personne.competence.map((competence:CompNiveauType, index) => {
-                    return (<DisplayCompetencePetitComponent competence={competence} key={index}/>)
+                    return (<DisplayCompetencePetitComponent personne={props.personne}  setPersonne={props.setPersonne} competence={competence} key={index}/>)
                 })
 
             }

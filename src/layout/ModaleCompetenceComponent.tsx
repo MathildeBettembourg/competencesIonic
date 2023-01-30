@@ -23,6 +23,7 @@ import DisplayListeComponent from '../components/Competences/DisplayListeCompene
 export const ModaleCompetenceComponent = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const input = useRef<HTMLIonInputElement>(null);
+  const[change, setChanged]=useState<boolean>(true)
 
 useEffect(()=>{
   serviceCompetences.getCompetences()

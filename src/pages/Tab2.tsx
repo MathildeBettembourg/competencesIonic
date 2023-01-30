@@ -33,7 +33,7 @@ const Tab2= () => {
         </IonHeader> */}
         {/*<ExploreContainer name="Tab 2 page" />*/}
         <DisplayProfileCare personne={personne}/>
-        <DisplayListeCompetence personne={personne} />
+        <DisplayListeCompetence personne={personne} setPersonne={setPersonne} />
       </IonContent>
 }
       </IonPage>

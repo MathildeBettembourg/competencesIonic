@@ -6,6 +6,8 @@ import uuid from 'react-uuid';
 import { PersonnesType } from '../../Typages/PersonnesType';
 import { CompetencesType } from '../../Typages/CompetencesType';
 import {CompNiveauType} from "../../Typages/CompNiveauType";
+import {serviceCompetences} from "../../services/ServiceCompetences";
+import {log} from "util";
 
 export type Props={
     nouvellePersonne:PersonnesType
@@ -14,6 +16,8 @@ export type Props={
     listeTech:CompetencesType[]
 }
 const InputPersonnes = (props:Props) => {
+
+    const [newComp, setNewComp]=useState<any[]>([])
 
 /**
  * HANDLENOMCHANGE est une fonction qui permet de setter l'id et le nom du nouvelle utilisateur
@@ -44,23 +48,23 @@ const InputPersonnes = (props:Props) => {
     const handleDescriptionChange=(e:any)=>{
         props.setNouvellePersonne({...props.nouvellePersonne, description:e.target.value})
     }
+    const [toUpdate, setToUpdate]=useState<CompetencesType>(new CompetencesType("", "", "", []))
+    const handleChangeCompetence=(newComp:any[])=>{
+        const id=props.nouvellePersonne.id
+       newComp.map((i, index)=> {
+           serviceCompetences.getCompetencesById(i.idCompetence)
+               .then((res)=> serviceCompetences.updatePost(i.idCompetence, {...res,nom:res.nom, description:res.description, id:res.id, personnesIds:[...res.personnesIds, id]}))
+                })
+        }
 
-    const [newComp, setNewComp]=useState<CompNiveauType[]>([])
-    const handleChangeCompetence=(newComp:CompNiveauType[])=>{
-        console.log(newComp[0].id)
-        // props.setNouvellePersonne(
-        //     {...props.nouvellePersonne,
-        //         competence:
-        //             [...props.nouvellePersonne.competence,newComp
-        //             ]
-        //     })
-    }
     /**
      * Handle click est la fonction pour ajouter une nouvelle personne
      */
     const handleClick=()=>{
+    handleChangeCompetence(newComp)
         props.handleClick()
     }
+   console.log(toUpdate)
     return (
         <IonList>
 
@@ -88,9 +92,9 @@ const InputPersonnes = (props:Props) => {
                 <SelectComponent ajoutComp={props.setNouvellePersonne}
                                  nouvellePersonne={props.nouvellePersonne}
                                  listeCompetence={props.listeTech}
-                                 newComp={newComp}
+                                 newCompetence={newComp}
                                  setNewComp={setNewComp}
-                                 handleChangeCompetence={handleChangeCompetence}/>
+                              />
             </IonItem>
             <IonButton onClick={handleClick}>Ajouter</IonButton>
         </IonList>

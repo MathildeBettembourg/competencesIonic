@@ -34,7 +34,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import CompetenceDetail from './pages/CompetenceDetail';
-import NiveauEditionLayout from './layout/NiveauEditionLayout';
+import EditionProfil from './layout/EditionProfil';
 import Tab2 from './pages/Tab2';
 
 
@@ -55,7 +55,7 @@ const App: React.FC = () => (
             <Redirect to="/tab1" />
           </Route>
           <Route path='/competenceDetail/:id' component={CompetenceDetail}></Route>
-          <Route path='/NiveauEdition/:id' component={NiveauEditionLayout}></Route>
+          <Route path='/EditionProfil/:id' component={EditionProfil}></Route>
           <Route path='/Tab2/:id' component={Tab2}/>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

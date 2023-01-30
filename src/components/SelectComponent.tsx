@@ -10,28 +10,19 @@ export type Props = {
     listeCompetence: CompetencesType[]
     ajoutComp: Function
     nouvellePersonne: PersonnesType
-    newComp:CompNiveauType[]
+    newCompetence:CompNiveauType[]
     setNewComp:Function
-    handleChangeCompetence:Function
+
 }
 export const SelectComponent = (props: Props) => {
-    const uid = uuid()
+    // const uid = uuid()
     const [listCompetence, setListCompetence]=useState<string[]>([])
+    const [listCompObject, setListCompObject]=useState<CompNiveauType[]>([])
     // const newComp:CompNiveauType[]=[]
     const listNouvelleCompObject=()=>{
-        console.log("test")
-        listCompetence.forEach(idComp => props.setNewComp(props.newComp.push(new CompNiveauType("", idComp, uid))))
-        console.log(props.newComp)
-        return props.newComp
-        // listCompetence.map((i, index)=> {
-        //     console.log(i)
-        //     return props.setNewComp([...props.newComp,new CompNiveauType("", i, uid) ])
+        listCompetence.forEach(idComp => listCompObject.push(new CompNiveauType("", idComp,  uuid())))
         }
 
-        // ))
-        //
-        //
-        // }
 
     useEffect(()=>{
         listNouvelleCompObject()
@@ -39,15 +30,24 @@ export const SelectComponent = (props: Props) => {
     const handleChange = (ev: any) => {
         setListCompetence(ev.target.value);
     }
-
+const [isDisplay, setIsdisplay]=useState<boolean>(true)
 const handleClick=()=>{
-        props.handleChangeCompetence(props.newComp)
+        setIsdisplay(!isDisplay)
+    props.ajoutComp(
+        {...props.nouvellePersonne,
+            competence:
+                listCompObject
+        })
+        props.setNewComp(listCompObject)
+
+        //props.handleChangeCompetence(props.newCom
+    // petence)
 }
 
     return (
         <IonList>
             <IonItem>
-                <IonSelect onIonChange={handleChange} placeholder="Select all fruits that apply" multiple={true}>
+                <IonSelect onIonChange={handleChange} placeholder="Select all fruits that apply" multiple={true} disabled={isDisplay}>
                     <IonSelectOption value="oranges">Aucunes</IonSelectOption>
                     {props.listeCompetence && props.listeCompetence.length != 0 &&
                         props.listeCompetence.map((competence: CompetencesType, index) => {

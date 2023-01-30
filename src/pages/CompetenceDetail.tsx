@@ -1,4 +1,17 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonFooter, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import {
+    IonButton,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonContent,
+    IonFooter,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar
+} from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DisplayPersonnePetitLienCompetence from "../components/Competences/DisplayPersonnePetitLienCompetence";
@@ -38,6 +51,7 @@ export const CompetenceDetail = () => {
                         <p>Description : {detailledCompetence.description}</p>
                     </>
                 <IonCardContent>
+                    <IonButton routerLink={``}>Modifier</IonButton>
                 </IonCardContent>
             </IonCard> }
             <DisplayPersonnePetitLienCompetence listePersonne={detailledCompetence.personnesIds}/>

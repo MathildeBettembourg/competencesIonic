@@ -1,18 +1,19 @@
 import { CompetencesType } from './../Typages/CompetencesType';
-export class ServiceCompetences {
+import {CompNiveauType} from "../Typages/CompNiveauType";
+export class ServiceNiveauCompetences {
 
     /**
      * Get competence fait un appel au json server et recupeere les competences
      * @returns un liste de competences
      */
-    getCompetences = async () => {
-        const response = await fetch('http://localhost:3000/competences');
+    getNiveauCompetences = async () => {
+        const response = await fetch('http://localhost:3000/niveaux');
         const data = await response.json();
         return data;
     }
     getCompetencesById = async (id: any) => {
         //let ids = id.id
-        const response = await fetch(`http://localhost:3000/competences/${id}`);
+        const response = await fetch(`http://localhost:3000/niveaux/${id}`);
         const data = await response.json();
         return data;
     }
@@ -22,8 +23,8 @@ export class ServiceCompetences {
      * @param competence de type CompetenceType
      * @returns
      */
-    async addCompetence(competence: CompetencesType) {
-        return await fetch('http://localhost:3000/competences', {
+    async addCompetence(competence: CompNiveauType) {
+        return await fetch('http://localhost:3000/niveaux', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(competence)
@@ -45,13 +46,13 @@ export class ServiceCompetences {
      * @returns
      */
     async deleteCompetenceById(id: string) {
-        return await fetch(`http://localhost:3000/competences/${id}`,
+        return await fetch(`http://localhost:3000/niveaux/${id}`,
             {method: 'DELETE'})
             .then((res) => ((res.json())));
     }
 
-    async updatePost(id: string, competence: CompetencesType) {
-        fetch(`http://localhost:3000/competences/${id}`,
+    async updatePut(id: string, competence:CompNiveauType) {
+        fetch(`http://localhost:3000/niveaux/${id}`,
             {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
@@ -61,5 +62,4 @@ export class ServiceCompetences {
     }
 
 }
-   export const serviceCompetences = Object.freeze(new ServiceCompetences())
-   
+export const serviceNiveauCompetences = Object.freeze(new ServiceNiveauCompetences())
